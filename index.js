@@ -5,6 +5,10 @@ var PORT = process.env.PORT || 3000;
 
 const app = express();
 
+app.get("/", async (req, res) => {
+    res.redirect("/api/rates");
+});
+
 app.get("/api/rates", async (req, res) => {
     const base = req.query.base;
     const currency = req.query.symbols;
