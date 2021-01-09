@@ -4,6 +4,7 @@
   "description": "This involves creating a service integration to a public API and exposing a RESTful endpoint. The endpoint will accept requests and returns a modified response schema from the integrated API.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,6 +14,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "15.5.1"
+  },
   "bugs": {
     "url": "https://github.com/Timmy-id/Currency-Rates-API/issues"
   },
