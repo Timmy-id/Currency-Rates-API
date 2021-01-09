@@ -1,0 +1,24 @@
+{
+  "name": "Currency-Rates-API",
+  "version": "1.0.0",
+  "description": "This involves creating a service integration to a public API and exposing a RESTful endpoint. The endpoint will accept requests and returns a modified response schema from the integrated API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Timmy-id/Currency-Rates-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Timmy-id/Currency-Rates-API/issues"
+  },
+  "homepage": "https://github.com/Timmy-id/Currency-Rates-API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
