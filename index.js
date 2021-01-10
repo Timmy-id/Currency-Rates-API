@@ -6,7 +6,23 @@ var PORT = process.env.PORT || 3000;
 const app = express();
 
 app.get("/", async (req, res) => {
-    res.redirect("/api/rates");
+    const url = "https://api.exchangeratesapi.io/latest";
+    const options = {
+        "method": "GET",
+    };
+    const response = await fetch(url, options)
+        .then(res => res.json())
+        .catch(e => {
+            res.status(404).json({ "message": "Invalid data", error: e, });
+        });
+
+    res.status(200).json({
+        results: {
+            base: response.base,
+            date: response.date,
+            rates: response.rates
+        }
+    });
 });
 
 app.get("/api/rates", async (req, res) => {
