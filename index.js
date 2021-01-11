@@ -5,6 +5,13 @@ var PORT = process.env.PORT || 3000;
 
 const app = express();
 
+let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+        
+        today = mm + '-' + dd + '-' + yyyy;
+
 app.get("/", async (req, res) => {
     const url = "https://api.exchangeratesapi.io/latest";
     const options = {
@@ -19,7 +26,7 @@ app.get("/", async (req, res) => {
     res.status(200).json({
         results: {
             base: response.base,
-            date: response.date,
+            date: today,
             rates: response.rates
         }
     });
@@ -42,7 +49,7 @@ app.get("/api/rates", async (req, res) => {
     res.status(200).json({
         results: {
             base: response.base,
-            date: response.date,
+            date: today,
             rates: response.rates
         }
     });
